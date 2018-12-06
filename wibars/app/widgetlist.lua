@@ -13,7 +13,7 @@ local function make_widgetlist (args)
 
     local minor_args = args
     -- terminal
-    local mytermicon = makewidget(
+    local myterm = makewidget(
 	{
 	    icon = iconlist.term,
 --	    app = "/usr/bin/urxvtc" 
@@ -22,7 +22,7 @@ local function make_widgetlist (args)
 	minor_args
     )
     -- midnight commander
-    local mymcicon = makewidget(
+    local mymc = makewidget(
 	{
 	    icon = iconlist.mc,
 	    app = awful.util.terminal .. " -e /usr/bin/mc"
@@ -30,7 +30,7 @@ local function make_widgetlist (args)
 	minor_args
     )
     -- Thunar
-    local myThunaricon = makewidget(
+    local myThunar = makewidget(
 	{
 	    icon = iconlist.Thunar,
 	    app = "/usr/bin/thunar" 
@@ -38,7 +38,7 @@ local function make_widgetlist (args)
 	minor_args
     )
     -- vim
-    local myvimicon = makewidget(
+    local myvim = makewidget(
 	{
 	    icon = iconlist.vim,
 --	    app = "/usr/bin/urxvtc -e vim" 
@@ -47,7 +47,7 @@ local function make_widgetlist (args)
 	minor_args
     )
     -- ZeroBrane Studio
-    local myzbstudioicon = makewidget(
+    local myzbstudio = makewidget(
 	{
 	    icon = iconlist.zbstudio,
 	    app = "/usr/bin/bash -c /home/user1/bin/zbstudio"
@@ -55,7 +55,7 @@ local function make_widgetlist (args)
 	minor_args
     )
     -- d-feet
-    local mydfeeticon = makewidget(
+    local mydfeet = makewidget(
 	{
 	    icon = iconlist.dfeet,
 	    app = "/usr/bin/d-feet"
@@ -63,7 +63,7 @@ local function make_widgetlist (args)
 	minor_args
     )
     -- xfce4 notes
-    local mynotesicon = makewidget(
+    local mynotes = makewidget(
 	{
 	    icon = iconlist.notes,
 	    app = "/usr/bin/bash -c /usr/bin/xfce4-notes" 
@@ -71,7 +71,7 @@ local function make_widgetlist (args)
 	minor_args
     )
     -- galculator calc
-    local mycalcicon = makewidget(
+    local mycalc = makewidget(
 	{
 	    icon = iconlist.calc,
 	    app = "/usr/bin/galculator"
@@ -79,7 +79,7 @@ local function make_widgetlist (args)
 	minor_args
     )
     -- firefox 
-    local myfirefoxicon = makewidget(
+    local myfirefox = makewidget(
 	{
 	    icon = iconlist.firefox,
 	    app = "/usr/bin/firefox" 
@@ -87,7 +87,7 @@ local function make_widgetlist (args)
 	minor_args
     )
     -- midori 
-    local mychromiumicon = makewidget(
+    local mychromium = makewidget(
 	{
 	    icon = iconlist.chromium,
 	    app = "/usr/bin/chromium" 
@@ -95,7 +95,7 @@ local function make_widgetlist (args)
 	minor_args
     )
     -- qutebrowser 
-    local myqutebrowsericon = makewidget(
+    local myqutebrowser = makewidget(
 	{
 	    icon = iconlist.qutebrowser,
 	    app = "/usr/bin/qutebrowser" 
@@ -103,7 +103,7 @@ local function make_widgetlist (args)
 	minor_args
     )
     -- deluge 
-    local mydelugeicon = makewidget(
+    local mydeluge = makewidget(
 	{
 	    icon = iconlist.deluge,
 	    app = "/usr/bin/deluge" 
@@ -111,7 +111,7 @@ local function make_widgetlist (args)
 	minor_args
     )
     -- viber 
-    local myvibericon = makewidget(
+    local myviber = makewidget(
 	{
 	    icon = iconlist.viber,
 	    app = "/usr/bin/viber" 
@@ -119,7 +119,7 @@ local function make_widgetlist (args)
 	minor_args
     )
     -- gimp 
-    local mygimpicon = makewidget(
+    local mygimp = makewidget(
 	{
 	    icon = iconlist.gimp,
 	    app = "/usr/bin/gimp" 
@@ -127,7 +127,7 @@ local function make_widgetlist (args)
 	minor_args
     )
     -- xfce screenshooter 
-    local myscreenshoticon = makewidget(
+    local myscreenshot = makewidget(
 	{
 	    icon = iconlist.screenshot,
 	    app = "/usr/bin/xfce4-screenshooter"
@@ -136,7 +136,7 @@ local function make_widgetlist (args)
     )
    -- xfce4 task manager
    minor_args.separator_width = 0	-- no separator for last widget
-   local mytaskmanicon = makewidget(
+   local mytaskman = makewidget(
 	{
 	    icon = iconlist.taskman,
 	    app = "/usr/bin/xfce4-taskmanager" 
@@ -148,22 +148,22 @@ local function make_widgetlist (args)
     -- Don't make widgets in table. Use local variables,
     -- otherwise order will not correct.
     widgetlist = {
-	mytermicon,
-	mymcicon,
-	myThunaricon,
-	myvimicon,
-        myzbstudioicon,
-        mydfeeticon,
-    	mynotesicon,
-    	mycalcicon,
-    	myfirefoxicon,
-    	mychromiumicon,
-    	myqutebrowsericon,
-    	mydelugeicon,
-    	myvibericon,
-    	mygimpicon,
-    	myscreenshoticon,
-   	mytaskmanicon
+	myterm,
+	mymc,
+	myThunar,
+	myvim,
+        myzbstudio,
+        mydfeet,
+    	mynotes,
+    	mycalc,
+    	myfirefox,
+    	mychromium,
+    	myqutebrowser,
+    	mydeluge,
+    	myviber,
+    	mygimp,
+    	myscreenshot,
+   	mytaskman
     }
 
     return widgetlist
