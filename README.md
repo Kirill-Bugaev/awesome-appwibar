@@ -7,7 +7,7 @@ This wibar is an extension for Awesome WM. It allows you to launch application b
 
 ## Screenshots
 
-![Screenshot of bottom position](https://github.com/Kirill-Bugaev/awesome-arrowlain-wibar/blob/master/screenshots/screenshot_normal_spacer_left_solarized.png)
-![Screenshot of left position](https://github.com/Kirill-Bugaev/awesome-arrowlain-wibar/blob/master/screenshots/screenshot_normal_nospacer_right_nord.png)
+![Screenshot of bottom position](https://github.com/Kirill-Bugaev/awesome-appwibar/blob/master/screenshots/appwibar_screenshot.png)
+![Screenshot of left position](https://github.com/Kirill-Bugaev/awesome-appwibar/blob/master/screenshots/appwibar_screenshot2.png)
 
 [screenshots]: #Screenshots
