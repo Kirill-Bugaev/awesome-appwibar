@@ -72,7 +72,7 @@ You can customize wibar creating code above to configure wibar appearance. Just 
 
 ### Adding applications
 
-To add application launcher to wibar you need first of all add application icon. You can find some icons in `/usr/share/icons` directory on your system. To add icon to wibar I recommend to copy icon file to `~/.config/awesome/wibars/app/icons/apps` directory (if your Awesome config directory is `~/.config/awesome` of course). Further I will assume that you take my advice. You should add string is containing application name and icon file name to `iconlist.lua` configuration file (`~/.config/awesome/wibars/app/iconlist.lau` by default) after `iconlist` variable is defined:
+To add application launcher to wibar you need first of all add application icon. You can find some icons in `/usr/share/icons` directory on your system. To add icon to wibar I recommend to copy icon file to `~/.config/awesome/wibars/app/icons/apps` directory (if your Awesome config directory is `~/.config/awesome` of course). Further I assume that you take my advice. You should add string is containing application name and icon file name to `iconlist.lua` configuration file (`~/.config/awesome/wibars/app/iconlist.lau` by default) after `iconlist` variable is defined:
 
 ```lua
 local iconlist = { }
@@ -84,7 +84,7 @@ iconlist.*your_application_name* = icondir .. "*your_icon_file_name*"
 
 ``` 
 
-Wibar uses Awesome widgets to make launchers. So you should define widget variable for your application into `widgetlist.lua` configuration file (`~/.config/awesome/wibars/app/widgetlist.lua` by default) into `make_widgetlist()` function after `widgetlist` and `minor_args` variables are defined. Pay attention that `minor_args.separator_width = 0` string in this file sets zero separator size for last widget. It must precede last widget variable definition only. I highly recommend define widget variables in sequence that they will shown on wibar.
+Wibar uses Awesome widgets to make launchers. So you should define widget variable (any valid name) for your application into `widgetlist.lua` configuration file (`~/.config/awesome/wibars/app/widgetlist.lua` by default) in `make_widgetlist()` function after `widgetlist` and `minor_args` variables are defined. Pay attention that `minor_args.separator_width = 0` string in this file sets zero separator size for last widget. It must precede only last widget variable definition. I highly recommend define widget variables in sequence that they will shown on wibar.
 
 ```lua
 local function make_widgetlist (args)
@@ -92,7 +92,7 @@ local function make_widgetlist (args)
     local minor_args = args
 ...
     -- {{{ Code you should add
-    local *your_application_name* = makewidget(
+    local *your_application_widget_variable_name* = makewidget(
 	{
 	    icon = iconlist.*your_application_name*,
 	    app = "*command_line_to_launch_application*"
@@ -103,6 +103,27 @@ local function make_widgetlist (args)
 ...
 
 ```
+
+You should add defined widget variable to `widgetlist` table in the same configuration file in the same function. Notice, that sequence in which icons will shown on wibar is the same that they are placed in this table.
+```lua
+widgetlist = {
+...
+    *your_application_widget_variable_name*,
+...
+    }
+```
+
+### Removing applications
+
+To remove application launcher from wibar comment or remove appropriate string into `widgetlist.lua` configuration file (`~/.config/awesome/wibars/app/widgetlist.lua` by default) in `make_widgetlist()` function in `widgetlist` table. Also you can remove defined widget variable in `make_widgetlist()` function, but it is not necessary.
+```lua
+widgetlist = {
+...
+--  *application_widget_variable*,
+...
+```
+
+If you have any other issues and you can't find the answer in description above, please write me on kirill.bugaev87@gmail.com.
 
 [screenshots]: #Screenshots
 [awesome-lainmod]: https://github.com/Kirill-Bugaev/awesome-lainmod
