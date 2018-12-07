@@ -9,6 +9,13 @@ local iconlist		= wibars.app.iconlist
 local makewidget	= wibars.app.makewidget
 
 local function make_widgetlist (args)
+    local term = ""
+    if awful.util.terminal then
+	term = awful.util.terminal
+    else
+	term = terminal
+    end
+
     local widgetlist = {}
 
     local minor_args = args
@@ -17,7 +24,7 @@ local function make_widgetlist (args)
 	{
 	    icon = iconlist.term,
 --	    app = "/usr/bin/urxvtc" 
-	    app = awful.util.terminal .. " -e /usr/bin/tmux"
+	    app = term .. " -e /usr/bin/tmux"
 	},
 	minor_args
     )
@@ -25,7 +32,7 @@ local function make_widgetlist (args)
     local mymc = makewidget(
 	{
 	    icon = iconlist.mc,
-	    app = awful.util.terminal .. " -e /usr/bin/mc"
+	    app = term .. " -e /usr/bin/mc"
 	},
 	minor_args
     )
@@ -42,7 +49,7 @@ local function make_widgetlist (args)
 	{
 	    icon = iconlist.vim,
 --	    app = "/usr/bin/urxvtc -e vim" 
-	    app = awful.util.terminal .. " -e vim"
+	    app = term .. " -e vim"
 	},
 	minor_args
     )
