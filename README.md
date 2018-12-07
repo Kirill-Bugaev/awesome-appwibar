@@ -12,9 +12,9 @@ This wibar is an extension for Awesome WM. It allows you to launch application b
 
 ## Installation
 
-*awesome-arrowlain-wibar requires my [awesome-lainmod][] lua library and [awesome-base16][] color schemes suite which are separately distributed. You need to install them first.*
+*awesome-arrowlain-wibar requires [awesome-lainmod][] lua library and [awesome-base16][] color schemes suite which are separately distributed. You need to install them first.*
 
-Clone current repository to temporary directory with `git clone https://github.com/Kirill-Bugaev/awesome-appwibar.git`. Copy `wibars` directories from `awesome-appwibar` directory to your Awesome WM configuration directory (`~/.config/awesome` by default).
+Clone current repository to temporary directory with `git clone https://github.com/Kirill-Bugaev/awesome-appwibar.git`. Copy `wibars` directory from `awesome-appwibar` directory to your Awesome WM configuration directory (`~/.config/awesome` by default).
 
 ## Configuration
 
@@ -65,14 +65,14 @@ You can customize wibar creating code above to configure wibar appearance. Just 
 *  `width` (`*positive_number*`, default is `16`) sets wibar width.
 *  `scr` (`*awesome_screen*`, default is `awful.screen.focused()`) sets Awesome screen on which wibar will shown. If you create wibar for each screen in `awful.screen.connect_for_each_screen` function call then set this value equal to screen variable used in argument function (`s` above).
 *  `cs` (`base16.*color_scheme_name*`, default is `base16.solarized_dark`) sets color scheme for wibar. 5 color schemes are available out of box: default light and dark, solarized light and dark, nord. You can add your own color scheme or import existing from [base16][] suite.
-*  `separator_width` (`*positive_number*`, default is `3`) sets free space separator between application icons width.
+*  `separator_width` (`*positive_number*`, default is `3`) sets width of free space separator between application icons.
 *  `transparency` (`true` or `false`, default is `false`) sets wibar transparency. Pseudo-transparency is used.
 *  `hide` (`true` or `false`, default is `false`) sets wibar autohide.
 *  `hidewidth` (`*positive_number*`, default is `3`) sets wibar width when it is hided.
 
 ### Adding applications
 
-To add application launcher to wibar you need first of all add application icon. You can find some icons in `/usr/share/icons` directory on your system. To add icon to wibar I recommend to copy icon file to `~/.config/awesome/wibars/app/icons/apps` directory (if your Awesome config directory is `~/.config/awesome` of course). Further I assume that you take my advice. You should add string is containing application name and icon file name to `iconlist.lua` configuration file (`~/.config/awesome/wibars/app/iconlist.lau` by default) after `iconlist` variable is defined:
+To add application launcher to wibar you need first of all add application icon. You can find some icons in `/usr/share/icons` directory on your system. To add icon to wibar I recommend copy icon file to `~/.config/awesome/wibars/app/icons/apps` directory (if your Awesome config directory is `~/.config/awesome` of course). Further I assume that you take my advice. You should add string is containing application name and icon file name to `iconlist.lua` configuration file (`~/.config/awesome/wibars/app/iconlist.lau` by default) after `iconlist` variable is defined:
 
 ```lua
 local iconlist = { }
@@ -104,7 +104,7 @@ local function make_widgetlist (args)
 
 ```
 
-You should add defined widget variable to `widgetlist` table in the same configuration file in the same function. Notice, that sequence in which icons will shown on wibar is the same that they are placed in this table.
+You should add defined widget variable to `widgetlist` table in the same configuration file, in the same function. Notice, that sequence in which icons will shown on wibar is the same that they are placed in this table.
 ```lua
 widgetlist = {
 ...
@@ -123,8 +123,9 @@ widgetlist = {
 ...
 ```
 
-If you have any other issues and you can't find the answer in description above, please write me on kirill.bugaev87@gmail.com.
+If you have any issues and you can't find the answer in description above, please write me on kirill.bugaev87@gmail.com.
 
 [screenshots]: #Screenshots
 [awesome-lainmod]: https://github.com/Kirill-Bugaev/awesome-lainmod
 [awesome-base16]: https://github.com/Kirill-Bugaev/awesome-base16
+[base16]: http://chriskempson.com/projects/base16/
