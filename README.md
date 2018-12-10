@@ -43,7 +43,7 @@ awful.screen.connect_for_each_screen(function(s)
 	position	= "bottom",
 	visible		= true,
 	width		= 48,
-	scr		= s,
+	screen		= s,
 	cs		= base16.solarized_dark,
 	separator_width	= 3,
 	transparency	= true,
@@ -63,7 +63,7 @@ You can customize wibar creating code above to configure wibar appearance. Just 
 *  `position` (`left`, `right`, `top` or `bottom`, default is `left`) sets position of wibar on screen.
 *  `visible` (`true` or `false`, default is `true`) sets wibar visibility on Awesome screens.
 *  `width` (`*positive_number*`, default is `16`) sets wibar width.
-*  `scr` (`*awesome_screen*`, default is `awful.screen.focused()`) sets Awesome screen on which wibar will shown. If you create wibar for each screen in `awful.screen.connect_for_each_screen` function call then set this value equal to screen variable used in argument function (`s` above).
+*  `screen` (`*awesome_screen*`, default is `awful.screen.focused()`) sets Awesome screen on which wibar will shown. If you create wibar for each screen in `awful.screen.connect_for_each_screen` function call then set this value equal to screen variable used in argument function (`s` above).
 *  `cs` (`base16.*color_scheme_name*`, default is `base16.solarized_dark`) sets color scheme for wibar. 5 color schemes are available out of box: default light and dark, solarized light and dark, nord. You can add your own color scheme or import existing from [base16][] suite.
 *  `separator_width` (`*positive_number*`, default is `3`) sets width of free space separator between application icons.
 *  `transparency` (`true` or `false`, default is `false`) sets wibar transparency. Pseudo-transparency is used.
